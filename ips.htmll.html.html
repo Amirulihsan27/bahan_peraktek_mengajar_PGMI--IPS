@@ -1,0 +1,910 @@
+<html>
+<head>
+<title>ips.htmll.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ips.htmll.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;id&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s1">Peta Interaktif Sumatra</span><span class="s0">&lt;/title&gt;</span>
+
+    <span class="s0">&lt;style&gt;</span>
+        <span class="s1">body {</span>
+     <span class="s1">margin: 0;</span>
+  <span class="s1">font-family: 'Comic Sans MS', cursive;</span>
+  <span class="s1">background: linear-gradient(to bottom, #a8e6ff, #d4f8e8);</span>
+     <span class="s1">position: relative;</span>
+   <span class="s1">}</span>
+
+           <span class="s1">/* HEADER */</span>
+<span class="s1">header {</span>
+  <span class="s1">text-align: center;</span>
+  <span class="s1">background: #4facfe;</span>
+  <span class="s1">color: white;</span>
+  <span class="s1">padding: 20px;</span>
+  <span class="s1">font-size: 22px;</span>
+<span class="s1">}</span>
+
+
+           <span class="s1">/* HALAMAN */</span>
+           <span class="s1">.page {</span>
+             <span class="s1">display: none;</span>
+           <span class="s1">}</span>
+
+           <span class="s1">.active {</span>
+             <span class="s1">display: block;</span>
+           <span class="s1">}</span>
+
+           <span class="s1">/* MAP */</span>
+           <span class="s1">.map-container {</span>
+             <span class="s1">position: relative;</span>
+             <span class="s1">width: 700px;</span>
+             <span class="s1">margin: auto;</span>
+             <span class="s1">height: 500px;</span>
+           <span class="s1">}</span>
+
+<span class="s1">.map-container &gt; img.map-img {</span>
+  <span class="s1">width: 100%;</span>
+  <span class="s1">height: 100%;</span>
+  <span class="s1">object-fit: contain;</span>
+<span class="s1">}</span>
+
+           <span class="s1">/* TITIK */</span>
+<span class="s1">.point {</span>
+  <span class="s1">width: 18px;</span>
+  <span class="s1">height: 18px;</span>
+  <span class="s1">background: red;</span>
+  <span class="s1">border-radius: 50%;</span>
+  <span class="s1">position: absolute;</span>
+  <span class="s1">cursor: pointer;</span>
+  <span class="s1">border: 2px solid white;</span>
+<span class="s1">}</span>
+
+<span class="s1">.point:active {</span>
+  <span class="s1">transform: scale(2);</span>
+<span class="s1">}</span>
+           <span class="s1">.point:hover {</span>
+             <span class="s1">background: yellow;</span>
+             <span class="s1">transform: scale(1.5);</span>
+           <span class="s1">}</span>
+
+           <span class="s1">/* DESKRIPSI */</span>
+<span class="s1">.deskripsi {</span>
+  <span class="s1">width: 80%;</span>
+  <span class="s1">margin: 20px auto;</span>
+  <span class="s1">background: #fff8dc;</span>
+  <span class="s1">padding: 20px;</span>
+  <span class="s1">border-radius: 15px;</span>
+  <span class="s1">border: 3px dashed #ffb347;</span>
+<span class="s1">}</span>
+
+           <span class="s1">/* DETAIL */</span>
+           <span class="s1">.detail-box {</span>
+  <span class="s1">max-width: 700px;</span>
+  <span class="s1">margin: 20px auto;</span>
+  <span class="s1">background: #e0f7fa;</span>
+  <span class="s1">padding: 20px;</span>
+  <span class="s1">border-radius: 15px;</span>
+  <span class="s1">border: 3px solid #4dd0e1;</span>
+<span class="s1">}</span>
+
+<span class="s1">.detail-box img {</span>
+  <span class="s1">width: 60%;</span>
+  <span class="s1">display: block;</span>
+  <span class="s1">margin: 15px auto;</span>
+  <span class="s1">border-radius: 10px;</span>
+<span class="s1">}</span>
+
+<span class="s1">.judul-gambar {</span>
+  <span class="s1">text-align: center;</span>
+  <span class="s1">font-weight: bold;</span>
+  <span class="s1">font-size: 18px;</span>
+  <span class="s1">color: #ff5722;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* DESKRIPSI GAMBAR */</span>
+<span class="s1">.deskripsi-gambar {</span>
+  <span class="s1">width: 85%;</span>
+  <span class="s1">margin: 10px auto 20px;</span>
+  <span class="s1">text-align: center;</span>
+  <span class="s1">font-size: 14px;</span>
+  <span class="s1">background: #ffffff;</span>
+  <span class="s1">padding: 10px;</span>
+  <span class="s1">border-radius: 10px;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* TOMBOL */</span>
+<span class="s1">.back-btn {</span>
+  <span class="s1">margin-top: 15px;</span>
+  <span class="s1">padding: 10px 20px;</span>
+  <span class="s1">background: #ff9800;</span>
+  <span class="s1">color: white;</span>
+  <span class="s1">border: none;</span>
+  <span class="s1">cursor: pointer;</span>
+  <span class="s1">border-radius: 10px;</span>
+  <span class="s1">font-size: 16px;</span>
+<span class="s1">}</span>
+
+<span class="s1">.back-btn:hover {</span>
+  <span class="s1">background: #f57c00;</span>
+<span class="s1">}</span>
+
+           <span class="s1">.deskripsi,</span>
+   <span class="s1">.detail-box,</span>
+   <span class="s1">li {</span>
+       <span class="s1">text-align: justify;</span>
+   <span class="s1">}</span>
+
+   <span class="s1">p {</span>
+       <span class="s1">margin-bottom: 15px;</span>
+   <span class="s1">}</span>
+
+   <span class="s1">li {</span>
+       <span class="s1">margin-bottom: 15px;</span>
+   <span class="s1">}</span>
+
+<span class="s1">body::before {</span>
+  <span class="s1">content: &quot;&quot;;</span>
+  <span class="s1">position: fixed;</span>
+  <span class="s1">top: 0;</span>
+  <span class="s1">left: 0;</span>
+  <span class="s1">width: 100%;</span>
+  <span class="s1">height: 100%;</span>
+
+  <span class="s1">background: url('petasumatra1.jpg') no-repeat center;</span>
+  <span class="s1">background-size: 100%;</span>
+
+  <span class="s1">opacity: 0.15;</span>
+  <span class="s1">z-index: -100;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* ANIMASI MUNCUL */</span>
+<span class="s1">@keyframes fadeIn {</span>
+  <span class="s1">from {</span>
+    <span class="s1">opacity: 0;</span>
+    <span class="s1">transform: translateY(20px);</span>
+  <span class="s1">}</span>
+  <span class="s1">to {</span>
+    <span class="s1">opacity: 1;</span>
+    <span class="s1">transform: translateY(0);</span>
+  <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s1">.detail-box {</span>
+  <span class="s1">animation: fadeIn 0.6s ease;</span>
+<span class="s1">}</span>
+
+<span class="s1">.deskripsi {</span>
+  <span class="s1">animation: fadeIn 1s ease;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* TITIK BERKEDIP */</span>
+<span class="s1">@keyframes blink {</span>
+  <span class="s1">0% { transform: scale(1); }</span>
+  <span class="s1">50% { transform: scale(1.4); }</span>
+  <span class="s1">100% { transform: scale(1); }</span>
+<span class="s1">}</span>
+
+<span class="s1">.point {</span>
+  <span class="s1">animation: blink 1.5s infinite;</span>
+<span class="s1">}  /* ANIMASI PETA */</span>
+<span class="s1">.map-img {</span>
+  <span class="s1">opacity: 0;</span>
+  <span class="s1">animation: fadeMap 2s ease forwards;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* KARAKTER */</span>
+<span class="s1">.character {</span>
+  <span class="s1">position: absolute;</span>
+  <span class="s1">bottom: 0;</span>
+  <span class="s1">left: 10px;</span>
+  <span class="s1">width: 120px;</span>
+
+  <span class="s1">opacity: 0;</span>
+  <span class="s1">transform: translateY(50px);</span>
+
+  <span class="s1">animation: munculKarakter 1.5s ease forwards, goyang 2s infinite 2s;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* PETA MUNCUL */</span>
+<span class="s1">@keyframes fadeMap {</span>
+  <span class="s1">to {</span>
+    <span class="s1">opacity: 1;</span>
+  <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s1">/* KARAKTER NAIK */</span>
+<span class="s1">@keyframes munculKarakter {</span>
+  <span class="s1">to {</span>
+    <span class="s1">opacity: 1;</span>
+    <span class="s1">transform: translateY(0);</span>
+  <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s1">/* KARAKTER GOYANG LUCU */</span>
+<span class="s1">@keyframes goyang {</span>
+  <span class="s1">0%, 100% { transform: translateY(0); }</span>
+  <span class="s1">50% { transform: translateY(-10px); }</span>
+<span class="s1">}</span>
+<span class="s1">/* PETA UTAMA */</span>
+<span class="s1">.map-img {</span>
+  <span class="s1">width: 100%;</span>
+  <span class="s1">height: 100%;</span>
+  <span class="s1">object-fit: contain;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* KARAKTER */</span>
+<span class="s1">.character {</span>
+  <span class="s1">position: absolute;</span>
+  <span class="s1">bottom: 0;</span>
+  <span class="s1">left: 10px;</span>
+  <span class="s1">width: 120px;</span>
+  <span class="s1">height: auto;</span>
+  <span class="s1">z-index: 10;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* PETA KECIL */</span>
+<span class="s1">.peta-kecil {</span>
+  <span class="s1">position: absolute;</span>
+  <span class="s1">top: 10px;</span>
+  <span class="s1">right: 10px;</span>
+  <span class="s1">width: 120px;</span>
+  <span class="s1">height: auto;</span>
+  <span class="s1">z-index: 9;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* WRAPPER FLEX BIAR KARAKTER DI SAMPING */</span>
+<span class="s1">.map-wrapper {</span>
+  <span class="s1">display: flex;</span>
+  <span class="s1">justify-content: center;</span>
+  <span class="s1">align-items: center;</span>
+  <span class="s1">gap: 30px; arak antara karakter dan peta */</span>
+<span class="s1">}</span>
+
+<span class="s1">/* KARAKTER KIRI */</span>
+<span class="s1">.character-left {</span>
+  <span class="s1">width: 350px;</span>
+  <span class="s1">position: relative;</span>
+  <span class="s1">top: -350px;</span>
+  <span class="s1">left: -50px; /* ke kiri */</span>
+<span class="s1">}</span>
+
+<span class="s1">/* KARAKTER KANAN */</span>
+<span class="s1">.character-right {</span>
+  <span class="s1">width: 250px;</span>
+  <span class="s1">height: auto;</span>
+<span class="s1">}.character-box {</span>
+  <span class="s1">position: relative;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* AWAN DI KIRI */</span>
+<span class="s1">.bubble {</span>
+  <span class="s1">position: absolute;</span>
+  <span class="s1">top: -400px;</span>
+  <span class="s1">right: 570px;</span>
+
+  <span class="s1">background: white;</span>
+  <span class="s1">padding: 10px 15px;</span>
+  <span class="s1">border-radius: 20px;</span>
+  <span class="s1">border: 2px solid #333;</span>
+
+  <span class="s1">font-size: 14px;</span>
+  <span class="s1">width: 180px;</span>
+
+  <span class="s1">box-shadow: 2px 2px 10px rgba(0,0,0,0.2);</span>
+<span class="s1">}</span>
+
+<span class="s1">/* EKOR AWAN (DI KIRI) */</span>
+<span class="s1">.bubble::after {</span>
+  <span class="s1">content: &quot;&quot;;</span>
+  <span class="s1">position: absolute;</span>
+  <span class="s1">bottom: 300px;</span>
+  <span class="s1">right: 150px;ah */</span>
+
+  <span class="s1">border-width: 10px;</span>
+  <span class="s1">border-style: solid;</span>
+  <span class="s1">border-color: white transparent transparent transparent;</span>
+<span class="s1">}.bubble {</span>
+  <span class="s1">opacity: 0;</span>
+  <span class="s1">animation: munculBubble 1s ease forwards;</span>
+<span class="s1">}</span>
+
+<span class="s1">@keyframes munculBubble {</span>
+  <span class="s1">to {</span>
+    <span class="s1">opacity: 1;</span>
+    <span class="s1">transform: translateY(-10px);</span>
+  <span class="s1">}</span>
+<span class="s1">}</span>
+    <span class="s1">/* WRAPPER DETAIL + KARAKTER */</span>
+<span class="s1">.detail-wrapper {</span>
+  <span class="s1">display: flex;</span>
+  <span class="s1">align-items: flex-start;</span>
+  <span class="s1">gap: 20px;</span>
+  <span class="s1">flex-wrap: nowrap;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* KARAKTER DI HALAMAN DETAIL */</span>
+<span class="s1">.character-detail {</span>
+  <span class="s1">width: 380px !important;</span>
+  <span class="s1">max-width: none !important;</span>
+  <span class="s1">flex-shrink: 0;</span>
+    <span class="s1">position: relative;</span>
+  <span class="s1">left: -1px;</span>
+<span class="s1">}</span>
+
+        <span class="s1">.bubble-detail {</span>
+  <span class="s1">position: absolute;</span>
+  <span class="s1">top: -20px;</span>
+  <span class="s1">left: 130px;</span>
+
+  <span class="s1">background: white;</span>
+  <span class="s1">padding: 10px;</span>
+  <span class="s1">border-radius: 15px;</span>
+  <span class="s1">border: 2px solid black;</span>
+
+  <span class="s1">width: 180px;</span>
+  <span class="s1">font-size: 13px;</span>
+
+  <span class="s1">animation: munculBubble 1s ease forwards;</span>
+<span class="s1">}</span>
+
+<span class="s1">/* EKOR */</span>
+<span class="s1">.bubble-detail::after {</span>
+  <span class="s1">content: &quot;&quot;;</span>
+  <span class="s1">position: absolute;</span>
+  <span class="s1">left: -40px;</span>
+  <span class="s1">top: 20px;</span>
+
+  <span class="s1">border-width: 10px;</span>
+  <span class="s1">border-style: solid;</span>
+  <span class="s1">border-color: transparent white transparent transparent;</span>
+<span class="s1">}</span>
+
+    <span class="s0">&lt;/style&gt;</span>
+
+<span class="s0">&lt;/head&gt;</span>
+
+<span class="s0">&lt;body&gt;</span>
+
+<span class="s0">&lt;header&gt;</span>
+    <span class="s0">&lt;h1&gt;</span><span class="s1">🌈 Jelajah Seru Pulau Sumatra 🗺️</span><span class="s0">&lt;/h1&gt;</span>
+    <span class="s0">&lt;p&gt;</span><span class="s1">Ayo klik titik merah untuk belajar! 🎉</span><span class="s0">&lt;/p&gt;</span>
+<span class="s0">&lt;/header&gt;</span>
+
+<span class="s4">&lt;!-- HALAMAN 1 --&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;homePage&quot; </span><span class="s2">class</span><span class="s3">=&quot;page active&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;map-container&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;img </span><span class="s2">src</span><span class="s3">=&quot;petasumatra.jpg&quot; </span><span class="s2">class</span><span class="s3">=&quot;map-img&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;character-box&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;img </span><span class="s2">src</span><span class="s3">=&quot;tuntun.png&quot; </span><span class="s2">class</span><span class="s3">=&quot;character-left&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;bubble&quot;</span><span class="s0">&gt;</span><span class="s1">Mari kita belajar tentang Sumatra! 🌈</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:12%; left:27%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Aceh')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:24%; left:39%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Sumut')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:45%; left:45%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Sumbar')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:34%; left:53%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Riau')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:32%; left:76%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Kepri')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:51%; left:64%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Jambi')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:62%; left:71%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Sumsel')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:69%; left:58%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Bengkulu')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:76%; left:68%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Lampung')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;point&quot; </span><span class="s2">style</span><span class="s3">=&quot;top:55%; left:72%;&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showDetail('Babel')&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+    <span class="s4">&lt;!-- PETUNJUK --&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;deskripsi&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;h2&gt;</span><span class="s1">Petunjuk Belajar</span><span class="s0">&lt;/h2&gt;</span>
+        <span class="s0">&lt;p&gt;</span><span class="s1">👆 Klik titik merah di peta untuk belajar tentang provinsi di Sumatra.</span><span class="s0">&lt;/p&gt;</span>
+        <span class="s0">&lt;p&gt;</span><span class="s1">📖 Bacalah materi dengan baik terlebih dahulu.</span><span class="s0">&lt;/p&gt;</span>
+        <span class="s0">&lt;p&gt;</span><span class="s1">Setelah itu, coba jawab quiz di bawah ini ya!</span><span class="s0">&lt;/p&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s4">&lt;!-- QUIZ --&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;deskripsi&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;h2&gt;</span><span class="s1">🎮 Quiz Seru Anak Pintar!</span><span class="s0">&lt;/h2&gt;</span>
+        <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;soal&quot;</span><span class="s0">&gt;&lt;/p&gt;</span>
+
+        <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;pilihan&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+
+        <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;hasilQuiz&quot;</span><span class="s0">&gt;&lt;/p&gt;</span>
+        <span class="s0">&lt;button </span><span class="s2">onclick</span><span class="s3">=&quot;nextSoal()&quot;</span><span class="s0">&gt;</span><span class="s1">➡️ Soal Berikutnya</span><span class="s0">&lt;/button&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s4">&lt;!-- HALAMAN 2 --&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;detailPage&quot; </span><span class="s2">class</span><span class="s3">=&quot;page&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;detail-box&quot; </span><span class="s2">id</span><span class="s3">=&quot;detailContent&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;script&gt;</span>
+    <span class="s1">const dataProvinsi = {</span>
+
+   <span class="s1">Aceh: {</span>
+     <span class="s1">nama: &quot;Aceh&quot;,</span>
+     <span class="s1">ibuKota: &quot;Banda Aceh&quot;,</span>
+       <span class="s1">karakter: &quot;aceh.png&quot;,</span>
+       <span class="s1">bubble: &quot;Halo! Aku dari Aceh 🌙 Yuk belajar tentang Serambi Mekah!&quot;,</span>
+   <span class="s1">deskripsi: &quot;Aceh adalah provinsi di ujung barat Indonesia. Daerah ini dikenal dengan julukan Serambi Mekah karena budaya Islamnya sangat kuat. Masyarakat Aceh hidup dengan adat dan agama yang kental. Aceh juga terkenal dengan kopi Gayo yang sudah mendunia.&quot;,</span>
+
+     <span class="s1">gambar: [</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;makanankhasaceh.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Makanan Khas Aceh&quot;,</span>
+    <span class="s1">deskripsi: &quot;Mie Aceh adalah makanan khas dengan rasa pedas dan kaya rempah. Biasanya disajikan dengan daging atau seafood.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;rumahadataceh.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Rumah Adat Aceh&quot;,</span>
+    <span class="s1">deskripsi: &quot;Rumoh Aceh adalah rumah adat tradisional yang berbentuk panggung dan terbuat dari kayu. Rumah ini dirancang dengan struktur tinggi untuk menghindari banjir dan gangguan hewan. Selain itu, setiap bagian rumah memiliki makna filosofis yang mencerminkan nilai kehidupan dan adat istiadat masyarakat Aceh.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;tarianaceh.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Tarian Aceh&quot;,</span>
+    <span class="s1">deskripsi: &quot;Tari Saman merupakan tarian tradisional yang berasal dari Aceh dan biasanya ditampilkan secara berkelompok. Tarian ini dikenal dengan gerakan yang cepat, kompak, dan penuh kekompakan antar penari. Selain sebagai hiburan, Tari Saman juga mengandung pesan moral, nilai keagamaan, serta mempererat kebersamaan.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;senjatatradisionalaceh.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Senjata Tradisional Aceh&quot;,</span>
+    <span class="s1">deskripsi: &quot;Rencong adalah senjata tradisional khas Aceh yang memiliki bentuk melengkung dan unik. Senjata ini tidak hanya digunakan sebagai alat pertahanan diri, tetapi juga memiliki nilai simbolis sebagai lambang keberanian, kehormatan, dan identitas budaya masyarakat Aceh.&quot;</span>
+  <span class="s1">}</span>
+<span class="s1">]</span>
+   <span class="s1">},</span>
+
+   <span class="s1">Sumut: {</span>
+     <span class="s1">nama: &quot;Sumatera Utara&quot;,</span>
+     <span class="s1">ibuKota: &quot;Medan&quot;,</span>
+     <span class="s1">karakter: &quot;sumut.png&quot;,</span>
+<span class="s1">bubble: &quot;Hai! Ini Sumatera Utara 😄 Ada Danau Toba loh!&quot;,</span>
+    <span class="s1">deskripsi: &quot;Sumatera Utara beribu kota Medan. Provinsi ini memiliki banyak suku seperti Batak dan Melayu. Tempat terkenal di sini adalah Danau Toba, danau terbesar di Indonesia. Daerah ini juga banyak menghasilkan kelapa sawit.&quot;,</span>
+<span class="s1">gambar: [</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;makanankhassumut.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Makanan Khas Sumut&quot;,</span>
+    <span class="s1">deskripsi: &quot;Bika Ambon adalah salah satu makanan khas Sumatera Utara yang memiliki tekstur berongga dan rasa manis yang khas. Selain itu, terdapat juga saksang, yaitu hidangan berbahan dasar daging yang dimasak dengan bumbu tradisional khas Batak yang kaya rasa dan aroma.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;tariansumut.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Tarian Sumut&quot;,</span>
+    <span class="s1">deskripsi: &quot;Tari Tor-Tor adalah tarian tradisional yang berasal dari suku Batak dan biasanya ditampilkan dalam acara adat atau upacara penting. Gerakan tari ini sederhana namun penuh makna dan diiringi oleh musik gondang yang khas.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;rumahkhassumut.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Rumah Adat Sumut&quot;,</span>
+    <span class="s1">deskripsi: &quot;Rumah Bolon merupakan rumah adat suku Batak yang berbentuk panggung dengan atap melengkung yang khas. Rumah ini biasanya dihuni oleh beberapa keluarga dan mencerminkan nilai kebersamaan serta struktur sosial masyarakat Batak.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;senjatasumut.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+    <span class="s1">deskripsi: &quot;Piso Gaja Dompak adalah senjata tradisional khas Batak yang memiliki bentuk unik dan nilai simbolis tinggi. Senjata ini sering digunakan dalam upacara adat sebagai lambang kekuatan dan kehormatan.&quot;</span>
+  <span class="s1">}</span>
+<span class="s1">]</span>
+   <span class="s1">},</span>
+
+   <span class="s1">Sumbar: {</span>
+     <span class="s1">nama: &quot;Sumatera Barat&quot;,</span>
+     <span class="s1">ibuKota: &quot;Padang&quot;,</span>
+     <span class="s1">karakter: &quot;sumbarrr.png&quot;,</span>
+<span class="s1">bubble: &quot;Aku dari Sumbar! Rendang terkenal banget 🤤&quot;,</span>
+     <span class="s1">deskripsi: &quot;Sumatera Barat adalah daerah Minangkabau. Budayanya unik karena mengikuti garis keturunan ibu. Daerah ini terkenal dengan rendang yang lezat. Alamnya juga indah dengan gunung dan pantai.&quot;,</span>
+    <span class="s1">gambar: [</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;makanansumbar.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Makanan Khas&quot;,</span>
+    <span class="s1">deskripsi: &quot;Rendang adalah makanan khas Minangkabau yang terbuat dari daging sapi yang dimasak dengan santan dan berbagai rempah selama waktu yang lama hingga menghasilkan tekstur kering dan rasa yang sangat kaya. Rendang bahkan dikenal sebagai salah satu makanan terenak di dunia.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;rumahsumbar.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Rumah Adat&quot;,</span>
+    <span class="s1">deskripsi: &quot;Rumah Gadang adalah rumah adat khas Minangkabau yang memiliki bentuk atap menyerupai tanduk kerbau. Rumah ini tidak hanya berfungsi sebagai tempat tinggal, tetapi juga sebagai simbol adat, budaya, dan identitas masyarakat Minangkabau.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;tariansumbar.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Tarian Tradisional&quot;,</span>
+    <span class="s1">deskripsi: &quot;Tari Piring merupakan tarian tradisional Minangkabau yang menggunakan piring sebagai properti utama. Tarian ini menunjukkan kelincahan dan keterampilan penari dalam menjaga keseimbangan serta menjadi simbol rasa syukur masyarakat.&quot;</span>
+  <span class="s1">},</span>
+  <span class="s1">{</span>
+    <span class="s1">src: &quot;senjatasumbar.jpg&quot;,</span>
+    <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+    <span class="s1">deskripsi: &quot;Kerambit adalah senjata tradisional khas Minangkabau yang berbentuk melengkung seperti cakar harimau. Senjata ini digunakan dalam seni bela diri dan melambangkan kekuatan serta ketangkasan.&quot;</span>
+  <span class="s1">}</span>
+<span class="s1">]</span>
+   <span class="s1">},</span>
+
+  <span class="s1">Riau: {</span>
+  <span class="s1">nama: &quot;Riau&quot;,</span>
+  <span class="s1">ibuKota: &quot;Pekanbaru&quot;,</span>
+  <span class="s1">karakter: &quot;riau.png&quot;,</span>
+<span class="s1">bubble: &quot;Riau kaya minyak dan budaya Melayu!&quot;,</span>
+ <span class="s1">deskripsi: &quot;Riau beribu kota Pekanbaru dan kaya akan minyak bumi. Budaya masyarakatnya adalah budaya Melayu. Riau juga memiliki sungai besar yang penting untuk kehidupan. Daerah ini berkembang di bidang perkebunan.&quot;,</span>
+  <span class="s1">gambar: [</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;makananriau.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Makanan Khas&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gulai ikan patin merupakan makanan khas Riau yang sangat terkenal. Hidangan ini menggunakan ikan patin yang dimasak dengan bumbu rempah-rempah khas Melayu seperti kunyit, serai, dan lengkuas sehingga menghasilkan kuah berwarna kuning yang gurih dan kaya rasa. Makanan ini biasanya disajikan dalam acara keluarga maupun acara adat.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;rumahriau.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Rumah Adat&quot;,</span>
+      <span class="s1">deskripsi: &quot;Rumah adat Riau dikenal sebagai Rumah Melayu yang berbentuk rumah panggung dan terbuat dari kayu. Rumah ini memiliki ukiran khas dengan motif tumbuhan dan geometris yang melambangkan nilai-nilai kehidupan masyarakat Melayu. Selain sebagai tempat tinggal, rumah ini juga digunakan untuk kegiatan adat dan pertemuan keluarga besar.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;tarianriau.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Tarian Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Tari Zapin adalah tarian tradisional khas Riau yang dipengaruhi oleh budaya Islam dan Arab. Tarian ini memiliki gerakan yang dinamis dan diiringi oleh musik gambus serta marwas. Biasanya ditampilkan dalam acara adat, penyambutan tamu, dan perayaan penting sebagai bentuk hiburan dan pelestarian budaya.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;senjatariau.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Keris Melayu merupakan senjata tradisional yang digunakan oleh masyarakat Riau sejak zaman dahulu. Selain sebagai alat pertahanan diri, keris juga memiliki nilai spiritual dan simbolis yang tinggi. Biasanya keris digunakan dalam upacara adat dan menjadi simbol kehormatan serta status sosial seseorang.&quot;</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">},</span>
+
+<span class="s1">Kepri: {</span>
+  <span class="s1">nama: &quot;Kepulauan Riau&quot;,</span>
+  <span class="s1">ibuKota: &quot;Tanjung Pinang&quot;,</span>
+  <span class="s1">karakter: &quot;kepulauanriau.png&quot;,</span>
+<span class="s1">bubble: &quot;Aku dari Kepulauan Riau 🌊 banyak pulau indah!&quot;,</span>
+  <span class="s1">deskripsi: &quot;Kepulauan Riau terdiri dari banyak pulau kecil. Letaknya dekat dengan Singapura dan Malaysia. Daerah ini terkenal dengan laut dan pariwisatanya. Budayanya sangat kental dengan budaya Melayu.&quot;,</span>
+  <span class="s1">gambar: [</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;makanankepulauanrian.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Makanan Khas&quot;,</span>
+      <span class="s1">deskripsi: &quot;Otak-otak adalah makanan khas Kepulauan Riau yang terbuat dari daging ikan yang dihaluskan, dicampur dengan bumbu, kemudian dibungkus dengan daun dan dibakar. Makanan ini memiliki rasa gurih dan aroma khas dari daun pembungkusnya, serta biasanya disajikan dengan saus kacang atau sambal.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;rumahkepulauanrian.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Rumah Adat&quot;,</span>
+      <span class="s1">deskripsi: &quot;Rumah adat Kepulauan Riau merupakan rumah Melayu yang berbentuk panggung. Rumah ini dirancang untuk menghadapi kondisi lingkungan pesisir dan melindungi dari banjir serta hewan liar. Selain itu, bentuk dan hiasannya mencerminkan nilai budaya serta identitas masyarakat Melayu.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;tariankepulauanrian.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Tarian Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Tari Zapin juga berkembang di Kepulauan Riau sebagai bagian dari budaya Melayu. Tarian ini biasanya ditampilkan dalam acara adat dan keagamaan, dengan gerakan yang anggun dan diiringi musik tradisional yang khas.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;senjatakepulauanrian.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Keris merupakan senjata tradisional yang memiliki nilai sejarah dan budaya tinggi di Kepulauan Riau. Selain digunakan sebagai senjata, keris juga menjadi simbol kehormatan dan sering digunakan dalam upacara adat.&quot;</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">},</span>
+
+   <span class="s1">Jambi: {</span>
+  <span class="s1">nama: &quot;Jambi&quot;,</span>
+  <span class="s1">ibuKota: &quot;Jambi&quot;,</span>
+  <span class="s1">karakter: &quot;jambi.png&quot;,</span>
+<span class="s1">bubble: &quot;Jambi punya candi besar loh!&quot;,</span>
+ <span class="s1">deskripsi: &quot;Jambi memiliki ibu kota yang sama yaitu Jambi. Daerah ini terkenal dengan Candi Muaro Jambi. Alamnya terdiri dari hutan dan sungai besar. Budaya Melayu masih sangat kuat di sini.&quot;,</span>
+  <span class="s1">gambar: [</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;makananjambi.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Makanan Khas&quot;,</span>
+      <span class="s1">deskripsi: &quot;Tempoyak adalah makanan khas Jambi yang terbuat dari fermentasi durian. Biasanya diolah bersama ikan patin menjadi gulai bercita rasa asam dan gurih. Hidangan ini sangat populer di kalangan masyarakat karena memiliki rasa unik dan khas daerah.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;rumahjambi.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Rumah Adat&quot;,</span>
+      <span class="s1">deskripsi: &quot;Rumah Kajang Leko merupakan rumah adat Jambi yang berbentuk panggung dan terbuat dari kayu. Rumah ini memiliki ukiran khas Melayu dan digunakan sebagai tempat tinggal sekaligus simbol status sosial serta budaya masyarakat Jambi.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;tarianjambi.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Tarian Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Tari Sekapur Sirih adalah tarian tradisional Jambi yang digunakan untuk menyambut tamu kehormatan. Tarian ini melambangkan keramahan, penghormatan, dan kehangatan masyarakat Jambi kepada para tamu.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;senjatajambi.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Keris merupakan senjata tradisional yang juga digunakan di Jambi. Selain sebagai alat pertahanan diri, keris memiliki nilai seni dan filosofi tinggi serta sering digunakan dalam upacara adat dan simbol kehormatan.&quot;</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">},</span>
+
+ <span class="s1">Sumsel: {</span>
+  <span class="s1">nama: &quot;Sumatera Selatan&quot;,</span>
+  <span class="s1">ibuKota: &quot;Palembang&quot;,</span>
+  <span class="s1">karakter: &quot;palembang.png&quot;,</span>
+<span class="s1">bubble: &quot;Pempek dari Palembang enak banget!&quot;,</span>
+  <span class="s1">deskripsi: &quot;Sumatera Selatan beribu kota Palembang. Daerah ini terkenal dengan Sungai Musi. Dahulu merupakan pusat Kerajaan Sriwijaya. Selain itu, daerah ini kaya akan sumber daya alam.&quot;,</span>
+  <span class="s1">gambar: [</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;makanansumsel.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Makanan Khas&quot;,</span>
+      <span class="s1">deskripsi: &quot;Pempek adalah makanan khas Palembang yang terbuat dari campuran ikan dan tepung sagu. Makanan ini disajikan dengan kuah cuko yang memiliki rasa asam, manis, dan pedas sehingga memberikan cita rasa yang khas dan lezat.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;rumahsumsel.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Rumah Adat&quot;,</span>
+      <span class="s1">deskripsi: &quot;Rumah Limas adalah rumah adat Sumatera Selatan yang berbentuk panggung dengan atap bertingkat. Rumah ini melambangkan struktur sosial masyarakat dan biasanya digunakan dalam acara adat.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;tariansumsel.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Tarian Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Tari Gending Sriwijaya merupakan tarian penyambutan tamu yang menggambarkan kejayaan dan keagungan budaya Sriwijaya. Tarian ini memiliki gerakan yang anggun dan penuh makna.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;senjatasumsel.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Keris Palembang memiliki ciri khas tersendiri dan sering digunakan dalam upacara adat sebagai simbol kehormatan dan kebesaran.&quot;</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">},</span>
+
+<span class="s1">Bengkulu: {</span>
+  <span class="s1">nama: &quot;Bengkulu&quot;,</span>
+  <span class="s1">ibuKota: &quot;Bengkulu&quot;,</span>
+  <span class="s1">karakter: &quot;bengkulu.png&quot;,</span>
+<span class="s1">bubble: &quot;Aku dari Bengkulu! Ada bunga terbesar 🌺&quot;,</span>
+  <span class="s1">deskripsi: &quot;Bengkulu terletak di pantai barat Sumatra. Daerah ini terkenal dengan bunga Rafflesia, bunga terbesar di dunia. Selain itu, Bengkulu memiliki pantai yang indah. Budayanya masih terjaga hingga sekarang.&quot;,</span>
+  <span class="s1">gambar: [</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;makananbengkulu.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Makanan Khas&quot;,</span>
+      <span class="s1">deskripsi: &quot;Pendap adalah makanan khas Bengkulu yang terbuat dari ikan yang dibumbui dengan rempah-rempah, kemudian dibungkus dengan daun talas dan dimasak dalam waktu lama sehingga menghasilkan rasa gurih, pedas, dan sangat lezat.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;rumahbengkulu.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Rumah Adat&quot;,</span>
+      <span class="s1">deskripsi: &quot;Rumah Bubungan Lima merupakan rumah adat Bengkulu yang memiliki bentuk khas dengan atap yang unik. Rumah ini mencerminkan nilai budaya serta kehidupan masyarakat Bengkulu.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;tarianbengkulu.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Tarian Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Tari Andun adalah tarian tradisional Bengkulu yang biasanya ditampilkan dalam acara adat dan perayaan. Tarian ini melambangkan kebahagiaan dan kebersamaan masyarakat.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;senjatabengkulu.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Keris merupakan senjata tradisional yang juga digunakan di Bengkulu dan memiliki nilai simbolis serta budaya yang tinggi dalam kehidupan masyarakat.&quot;</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">},</span>
+
+<span class="s1">Lampung: {</span>
+  <span class="s1">nama: &quot;Lampung&quot;,</span>
+  <span class="s1">ibuKota: &quot;Bandar Lampung&quot;,</span>
+  <span class="s1">karakter: &quot;lampung.png&quot;,</span>
+<span class="s1">bubble: &quot;Lampung gerbang Sumatra 🚢&quot;,</span>
+  <span class="s1">deskripsi: &quot;Lampung adalah provinsi paling selatan di Sumatra. Daerah ini menjadi pintu masuk dari Pulau Jawa. Lampung memiliki budaya adat yang kuat. Selain itu, hasil perkebunannya seperti kopi dan lada sangat terkenal.&quot;,</span>
+  <span class="s1">gambar: [</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;makananlampung.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Makanan Khas&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gambar ini menampilkan makanan khas Lampung yaitu Seruit. Seruit adalah hidangan tradisional yang terdiri dari ikan bakar atau ikan goreng yang disajikan bersama sambal terasi, tempoyak (fermentasi durian), serta lalapan segar seperti daun kemangi dan timun. Makanan ini biasanya dinikmati bersama keluarga atau dalam acara adat sebagai simbol kebersamaan dan kekeluargaan masyarakat Lampung.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;rumahlampung.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Rumah Adat&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gambar ini menunjukkan rumah adat Lampung yang disebut Nuwo Sesat. Rumah ini digunakan sebagai tempat musyawarah adat dan kegiatan penting masyarakat. Bentuk bangunannya khas dengan struktur panggung dan atap yang menjulang tinggi. Nuwo Sesat melambangkan kebersamaan, kehormatan, dan sistem sosial masyarakat adat Lampung.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;tarianlampung.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Tarian Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gambar ini menampilkan Tari Sigeh Pengunten, yaitu tarian penyambutan khas Lampung. Tarian ini biasanya dipentaskan untuk menyambut tamu kehormatan atau dalam acara resmi. Gerakan tari yang anggun dipadukan dengan busana adat yang megah serta penggunaan aksesoris seperti siger (mahkota khas Lampung) memberikan kesan keindahan dan keanggunan budaya Lampung.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;senjatalampung.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gambar ini memperlihatkan Badik Lampung, yaitu senjata tradisional yang digunakan oleh masyarakat Lampung pada masa lalu. Badik memiliki bentuk bilah yang melengkung dan tajam, biasanya digunakan untuk perlindungan diri. Selain sebagai senjata, badik juga memiliki nilai simbolis sebagai lambang keberanian dan kehormatan.&quot;</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">},</span>
+
+<span class="s1">Babel: {</span>
+  <span class="s1">nama: &quot;Kepulauan Bangka Belitung&quot;,</span>
+  <span class="s1">ibuKota: &quot;Pangkal Pinang&quot;,</span>
+  <span class="s1">karakter: &quot;bangkabelitung.png&quot;,</span>
+<span class="s1">bubble: &quot;Bangka Belitung terkenal timah 🪨&quot;,</span>
+ <span class="s1">deskripsi: &quot;Bangka Belitung terdiri dari pulau-pulau kecil di timur Sumatra. Daerah ini terkenal sebagai penghasil timah. Selain itu, pantainya sangat indah dengan batu granit. Budayanya merupakan campuran Melayu dan Tionghoa.&quot;,</span>
+  <span class="s1">gambar: [</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;makananbangkabelitung.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Makanan Khas&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gambar ini menampilkan makanan khas Bangka Belitung yaitu Lempah Kuning. Lempah Kuning adalah masakan berkuah kuning berbahan dasar ikan yang dimasak dengan bumbu khas seperti kunyit, cabai, dan rempah-rempah lainnya. Rasanya segar, sedikit asam, dan pedas, menjadikannya salah satu kuliner favorit masyarakat setempat.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;rumahbangkabelitung.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Rumah Adat&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gambar ini memperlihatkan Rumah Rakit, yaitu rumah tradisional yang dibangun di atas air. Rumah ini mencerminkan kehidupan masyarakat pesisir Bangka Belitung yang sangat bergantung pada laut. Struktur rumah dibuat dari kayu dan mengapung di atas air, menunjukkan kearifan lokal dalam beradaptasi dengan lingkungan.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;tarianbangkabelitung.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Tarian Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gambar ini menunjukkan Tari Campak, tarian tradisional khas Bangka Belitung. Tari ini biasanya dipentaskan dalam acara hiburan atau perayaan sebagai bentuk kegembiraan. Gerakannya dinamis dan diiringi musik khas Melayu, mencerminkan semangat kebersamaan dan keceriaan masyarakat Babel.&quot;</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">src: &quot;aenjatabangkabelitung.jpg&quot;,</span>
+      <span class="s1">judul: &quot;Senjata Tradisional&quot;,</span>
+      <span class="s1">deskripsi: &quot;Gambar ini menampilkan Parang, senjata tradisional yang digunakan oleh masyarakat Bangka Belitung. Parang memiliki bentuk bilah panjang dan tajam, digunakan dalam aktivitas sehari-hari seperti berkebun maupun sebagai alat pertahanan diri pada masa lalu. Parang juga memiliki nilai simbolis sebagai alat kerja dan keberanian.&quot;</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">}</span>
+
+ <span class="s1">};</span>
+
+<span class="s1">function showDetail(prov) {</span>
+  <span class="s1">const info = dataProvinsi[prov];</span>
+
+  <span class="s1">let html = `</span>
+    <span class="s1">&lt;div class=&quot;detail-wrapper&quot;&gt;</span>
+
+      <span class="s1">&lt;div style=&quot;position: relative;&quot;&gt;</span>
+        <span class="s1">&lt;img src=&quot;${info.karakter}&quot; class=&quot;character-detail&quot;&gt;</span>
+
+        <span class="s1">&lt;div class=&quot;bubble-detail&quot;&gt;</span>
+          <span class="s1">${info.bubble}</span>
+        <span class="s1">&lt;/div&gt;</span>
+      <span class="s1">&lt;/div&gt;</span>
+
+      <span class="s1">&lt;div&gt;</span>
+        <span class="s1">&lt;h2&gt;📍 ${info.nama}&lt;/h2&gt;</span>
+        <span class="s1">&lt;p&gt;&lt;b&gt;🏙️ Ibu Kota:&lt;/b&gt; ${info.ibuKota}&lt;/p&gt;</span>
+        <span class="s1">&lt;p&gt;${info.deskripsi}&lt;/p&gt;</span>
+      <span class="s1">&lt;/div&gt;</span>
+
+    <span class="s1">&lt;/div&gt;</span>
+  <span class="s1">`;</span>
+
+  <span class="s1">info.gambar.forEach(g =&gt; {</span>
+    <span class="s1">html += `</span>
+      <span class="s1">&lt;img src=&quot;${g.src}&quot;&gt;</span>
+      <span class="s1">&lt;div class=&quot;judul-gambar&quot;&gt;${g.judul}&lt;/div&gt;</span>
+      <span class="s1">&lt;div class=&quot;deskripsi-gambar&quot;&gt;</span>
+        <span class="s1">${g.deskripsi}</span>
+      <span class="s1">&lt;/div&gt;</span>
+    <span class="s1">`;</span>
+  <span class="s1">});</span>
+
+  <span class="s1">html += `&lt;button class=&quot;back-btn&quot; onclick=&quot;backHome()&quot;&gt;Kembali&lt;/button&gt;`;</span>
+
+  <span class="s1">document.getElementById(&quot;detailContent&quot;).innerHTML = html;</span>
+
+  <span class="s1">document.getElementById(&quot;homePage&quot;).classList.remove(&quot;active&quot;);</span>
+  <span class="s1">document.getElementById(&quot;detailPage&quot;).classList.add(&quot;active&quot;);</span>
+<span class="s1">}</span>
+
+     <span class="s1">function backHome() {</span>
+       <span class="s1">document.getElementById(&quot;homePage&quot;).classList.add(&quot;active&quot;);</span>
+       <span class="s1">document.getElementById(&quot;detailPage&quot;).classList.remove(&quot;active&quot;);</span>
+     <span class="s1">}const quiz = [</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Ibukota Aceh adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Medan&quot;, &quot;Banda Aceh&quot;, &quot;Padang&quot;],</span>
+       <span class="s1">jawaban: 1</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Danau terbesar di Sumatra adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Danau Toba&quot;, &quot;Danau Singkarak&quot;, &quot;Danau Ranau&quot;],</span>
+       <span class="s1">jawaban: 0</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Ibukota Sumatera Barat adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Padang&quot;, &quot;Pekanbaru&quot;, &quot;Jambi&quot;],</span>
+       <span class="s1">jawaban: 0</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Makanan khas Palembang adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Rendang&quot;, &quot;Pempek&quot;, &quot;Gudeg&quot;],</span>
+       <span class="s1">jawaban: 1</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Provinsi paling selatan di Sumatra adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Lampung&quot;, &quot;Aceh&quot;, &quot;Riau&quot;],</span>
+       <span class="s1">jawaban: 0</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Gunung tertinggi di Sumatra adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Kerinci&quot;, &quot;Merapi&quot;, &quot;Sinabung&quot;],</span>
+       <span class="s1">jawaban: 0</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Ibukota Riau adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Jambi&quot;, &quot;Pekanbaru&quot;, &quot;Medan&quot;],</span>
+       <span class="s1">jawaban: 1</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Bangka Belitung terkenal dengan?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Emas&quot;, &quot;Timah&quot;, &quot;Batu bara&quot;],</span>
+       <span class="s1">jawaban: 1</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Ibukota Sumatera Utara adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Padang&quot;, &quot;Medan&quot;, &quot;Bengkulu&quot;],</span>
+       <span class="s1">jawaban: 1</span>
+     <span class="s1">},</span>
+     <span class="s1">{</span>
+       <span class="s1">soal: &quot;Provinsi dengan julukan Serambi Mekah adalah?&quot;,</span>
+       <span class="s1">pilihan: [&quot;Aceh&quot;, &quot;Lampung&quot;, &quot;Jambi&quot;],</span>
+       <span class="s1">jawaban: 0</span>
+     <span class="s1">}</span>
+   <span class="s1">];</span>
+
+   <span class="s1">let indexSoal = 0;</span>
+<span class="s1">let score = 0;</span>
+<span class="s1">let sudahJawab = false;</span>
+
+<span class="s1">function tampilSoal() {</span>
+  <span class="s1">const soal = document.getElementById(&quot;soal&quot;);</span>
+  <span class="s1">const pilihan = document.getElementById(&quot;pilihan&quot;);</span>
+  <span class="s1">const hasil = document.getElementById(&quot;hasilQuiz&quot;);</span>
+
+  <span class="s1">sudahJawab = false;</span>
+  <span class="s1">hasil.innerHTML = &quot;&quot;;</span>
+
+  <span class="s1">soal.innerHTML = &quot;❓ &quot; + quiz[indexSoal].soal;</span>
+  <span class="s1">pilihan.innerHTML = &quot;&quot;;</span>
+
+  <span class="s1">quiz[indexSoal].pilihan.forEach((p, i) =&gt; {</span>
+    <span class="s1">pilihan.innerHTML += `</span>
+      <span class="s1">&lt;button onclick=&quot;cekJawaban(${i})&quot;&gt;${p}&lt;/button&gt;</span>
+    <span class="s1">`;</span>
+  <span class="s1">});</span>
+<span class="s1">}</span>
+
+<span class="s1">function cekJawaban(pilih) {</span>
+  <span class="s1">if (sudahJawab) return;</span>
+
+  <span class="s1">sudahJawab = true;</span>
+
+  <span class="s1">const hasil = document.getElementById(&quot;hasilQuiz&quot;);</span>
+
+  <span class="s1">if (pilih === quiz[indexSoal].jawaban) {</span>
+    <span class="s1">hasil.innerHTML = &quot;🎉 Benar!&quot;;</span>
+    <span class="s1">hasil.style.color = &quot;green&quot;;</span>
+    <span class="s1">score++;</span>
+  <span class="s1">} else {</span>
+    <span class="s1">hasil.innerHTML = &quot;❌ Salah!&quot;;</span>
+    <span class="s1">hasil.style.color = &quot;red&quot;;</span>
+  <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s1">function nextSoal() {</span>
+  <span class="s1">if (!sudahJawab) {</span>
+    <span class="s1">alert(&quot;Jawab dulu soal ini!&quot;);</span>
+    <span class="s1">return;</span>
+  <span class="s1">}</span>
+
+  <span class="s1">indexSoal++;</span>
+
+  <span class="s1">if (indexSoal &gt;= quiz.length) {</span>
+    <span class="s1">document.getElementById(&quot;soal&quot;).innerHTML = &quot;🏆 Quiz selesai!&quot;;</span>
+    <span class="s1">document.getElementById(&quot;pilihan&quot;).innerHTML = &quot;&quot;;</span>
+
+    <span class="s1">let nilai = Math.round((score / quiz.length) * 100);</span>
+
+    <span class="s1">document.getElementById(&quot;hasilQuiz&quot;).innerHTML =</span>
+      <span class="s1">`Nilai kamu: &lt;b&gt;${nilai}&lt;/b&gt; 🎯&lt;br&gt;Benar: ${score} dari ${quiz.length}`;</span>
+
+    <span class="s1">return;</span>
+  <span class="s1">}</span>
+
+  <span class="s1">tampilSoal();</span>
+<span class="s1">}</span>
+
+<span class="s1">// tampil pertama</span>
+<span class="s1">tampilSoal();</span>
+<span class="s0">&lt;/script&gt;</span>
+
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
